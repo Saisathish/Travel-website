@@ -2,8 +2,8 @@
 
 const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
-  basePath: "/Travel-website",
-  assetPrefix: "/Travel-website",
+  basePath: isProd ? "/Travel-website" : "",
+  assetPrefix: isProd ? "/Travel-website" : "",
   output: "export",
   images: { unoptimized: true },
 };

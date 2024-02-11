@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -30,11 +33,11 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'bg-img-1': "url('/img-1.png')",
-        'bg-img-2': "url('/img-2.png')",
-        'feature-bg': "url('/feature-bg.png')",
-        pattern: "url('/pattern.png')",
-        'pattern-2': "url('/pattern-bg.png')",
+        'bg-img-1': isProd ? "url('/Travel-website/img-1.png')" : "url('/img-1.png')",
+        'bg-img-2': isProd ? "url('/Travel-website/img-2.png')" : "url('/img-2.png')",
+        'feature-bg': isProd ? "url('/Travel-website/feature-bg.png')" : "url('/feature-bg.png')",
+        pattern: isProd ? "url('/Travel-website/pattern.png')" : "url('/pattern.png')",
+        'pattern-2': isProd ? "url('/Travel-website/pattern-bg.png')" : "url('/pattern-bg.png')",
       },
       screens: {
         xs: '400px',
